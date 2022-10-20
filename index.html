@@ -1,138 +1,46 @@
 <!DOCTYPE html>
-<html theme="light">
+<html>
 <head>
 
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <title>Pikod</title>
+<title>Home</title>
 
-    <link rel="stylesheet" type="text/css" href="include/css/fontawesome.css">
-    <link rel="stylesheet" type="text/css" href="include/css/style.css">
+<link rel="stylesheet" type="text/css" href="https://bypikod.github.io/include/css/fontawesome.css">
+<link rel="stylesheet" href="https://use.typekit.net/hxe5wgi.css">
+<link rel="stylesheet" type="text/css" href="https://bypikod.github.io/include/css/style.css?v=9183">
+<link rel="icon" type="image/x-icon" href="https://bypikod.github.io/assets/images/favicon.png">
 
-    <script type="text/javascript" src="include/js/fontawesome.js"></script>
-    <script type="text/javascript" src="include/js/pi.js"></script>
-
-    <script>
-
-        tree = [
-            "Desktop",
-            "Game",
-            "Web"
-        ]
-
-        load = () => {
-
-            /* Top Button */
-            window.onscroll = () => {
-            
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
-                    topButton.style.opacity = '1';
-                else 
-                    topButton.style.opacity = '0';
-
-            }
-
-            let topButton = document.querySelector("#top-button");
-            topButton.onclick = () => window.location.replace("#intro");
-
-            /* Theme */
-            document.documentElement.setAttribute("theme", ( localStorage.getItem("theme") || "light" ))
-            let themeButton = document.querySelector("#theme-button");
-
-            themeButton.onclick = () => {
-                
-                let theme = pi.getTheme();
-
-                if(theme == "light")
-                    theme = "dark";
-                else
-                    theme = "light";
-
-                pi.setTheme(theme);
-
-            }
-
-            /* Social Media Buttons */
-            let socialButtons = document.querySelectorAll("#intro #social-bar button")
-            socialButtons.forEach(btn => {
-                
-                sendTo = btn.getAttribute("social");
-
-                getSendToFunction = (sendTo) => {
-                    switch(sendTo){
-
-                        case "github":
-                            return () => {
-                                window.open('https://www.github.com/ByPikod', '_blank');
-                            }
-                            break;
-                        case "youtube":
-                            return () => {
-                                window.open('https://www.youtube.com/c/Pikod', '_blank');
-                            }
-                            break;
-                        case "instagram":
-                            return () => {
-                                window.open('https://www.instagram.com/hzpikod', '_blank');
-                            }
-                            break;
-                        case "facebook":
-                            return () => {
-                                window.open('https://www.facebook.com/pikod.vbs', '_blank');
-                            }
-                            break;
-                        case "twitter":
-                            return () => {
-                                window.open('https://www.twitter.com/hzpikod', '_blank');
-                            }
-                            break;
-                        case "discord":
-                            return () => {
-                                window.open("https://www.discord.gg/EHhanEgsvd", '_blank');
-                            }
-                            break;
-                        case "steam":
-                            return () => {
-                                window.open('https://steamcommunity.com/id/pikod/', '_blank');
-                            }
-                            break;
-
-                    }
-                }
-
-                btn.onclick = getSendToFunction(sendTo);
-
-            });
+<script type="text/javascript" src="https://bypikod.github.io/include/js/external/fontawesome.js"></script>
+<script type="text/javascript" src="https://bypikod.github.io/include/js/pi-core.js"></script>
+    <script src="https://bypikod.github.io/include/js/external/progressbar.min.js"></script>
+    <script src="https://bypikod.github.io/include/js/pi-scroll-navigation.js"></script>
+    <script src="https://bypikod.github.io/include/js/pi-slider.js"></script>
+    <script src="https://bypikod.github.io/include/js/home.js"></script>
     
-        }
-
-    
-    </script>
-
 </head>
-<body onload="load()">
+<body>
 
     <!-- NAVIGATION BAR -->    
-    <header>
-        <a href="https://pikod.github.io" class="title">pikod.github.io</a>
-        <ul class="navbar">
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><button class="pi-button">Get Contact</button></li>
-            <li><button class="pi-button" id="theme-button"><i class="fa-solid fa-lightbulb"></i></button></li>
-        </ul>
-    </header>
-
-    <button class="pi-button" id="top-button" title="Go to top"><i class="fa-solid fa-hand-point-up"></i></button>
-
+<header id="pi-header">
+    <style>
+        html[theme="light"] #header-logo{background-image: url(https://bypikod.github.io/assets/images/favicon-black.png)}
+        html[theme="dark"] #header-logo{background-image: url(https://bypikod.github.io/assets/images/favicon.png)}
+    </style>
+    <a href="https://bypikod.github.io" class="title"><div id="header-logo"></div></a>
+    <ul class="navbar">
+        <!-- <li><a href="https://bypikod.github.io">Home</a></li> -->
+        <li><button class="pi-button theme-button" id="theme-button"><i class="fa-solid fa-lightbulb"></i></button></li>
+    </ul>
+</header>
     <!-- INTRO -->
-    <div class="my-row" id="intro">
-        <img src="assets/introduction.svg" alt="">
+    <div class="my-row" id="home" alt="Home" style="background-image: url(https://bypikod.github.io/assets/images/wallpaper.png);">
+        <div style="position: absolute;top: 0%; left: 0%; right: 0%; bottom: 0%; background: rgba(0, 0, 0, 0.5);"></div>
         <div class="texts">
-            <h1 class="title">Yahya Batulu</h1>
-            <span>&#60Fullstack Developer&#62</span>
+            <h1 class="title">yahya batulu</h1>
+            <span>&#60FULLSTACK DEVELOPER&#62</span>
             <ul id="social-bar">
                 <button social="github" class="pi-button social-buttons"><i class="fa-brands fa-github"></i></button>
                 <button social="youtube" class="pi-button social-buttons"><i class="fa-brands fa-youtube"></i></button>
@@ -142,15 +50,376 @@
                 <button social="discord" class="pi-button social-buttons"><i class="fa-brands fa-discord"></i></button>
                 <button social="steam" class="pi-button social-buttons"><i class="fa-brands fa-steam"></i></button>
             </ul>
-        </div>
+        </div>  
+
     </div>
 
-    <!-- SKILLS -->
-    <div class="my-row" id="skills">
-        <span class="tree">
-
+    <div class="my-row" id="about" alt="About">
+        <span id="about-inside-box">
+            <!--<svg id="about-logo" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" class="hexagon">
+                <defs>
+                    <pattern id="img" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image xlink:href="https://bypikod.github.io/assets/images/pp.jpg" x="-25" width="150" height="100" />
+                    </pattern>
+                </defs>
+                <polygon points="
+                25 0 
+                75 0
+                100 50
+                75 100
+                25 100
+                0 50
+                " fill="url(#img)"/>
+            </svg>-->
+            <div id="about-logo" style="background-image: url('https://bypikod.github.io/assets/images/pp.jpg');"></div>
+            <div id="about-text">
+                <h1>About Me</h1>
+                <p>
+                    Who is "Picode" ? My real name is Yahya. I was born in 2005. 
+                    As a software developer who has programming as a lifestyle I've been programming since I was 12 years old.
+                </p>
+            </div>
+            <div id="about-boxes">
+                <div bg-color="pink" class="about-box">
+                    <header>My Vision</header>
+                    <p>My primary goal is to serving the human race through my works. These works might be inventions that make daily life easier, or contents that entertain people.</p>
+                </div>
+                <div bg-color="yellow" class="about-box">
+                    <header>Interests</header>
+                    <p>
+                        <ul>
+                            <li>Video Games</li>
+                            <li>Social Media</li>
+                            <li>Video Editing</li>
+                            <li>Drawing</li>
+                            <li>Music</li>
+                        </ul>
+                    </p>
+                </div>
+                <div bg-color="aqua" class="about-box">
+                    <header>Languages</header>
+                    <p>
+                        <ul>
+                            <li>Turkish</li>
+                            <li>Circassian</li>
+                            <li>English</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
         </span>
     </div>
 
+    <div class="my-row" id="timeline" alt="Timeline">
+        <div id="timeline-viewport">
+            <div id="timeline-line"></div>
+            <div style="left: 5%;" class="timeline-box top">
+                <div class="timeline-box-dot"></div>
+                <header>The Beginning of my Journey</header>
+                <p>I remember that was the first time I used Scratch in October 2015 in computer class at school. Before that I was sending prank viruses to my friends. I mean, I already had an idea about how algorithms work. My habit of algorithm logic has brought a noticeable success in Scratch.</p>
+                <span class="timeline-date">October 2015</span>
+            </div>
+            <div style="left: 32%;" class="timeline-box bottom">
+                <div class="timeline-box-dot"></div>
+                <header>Inevitable Success</header>
+                <p>
+                    With the supports of my school teacher, I tried to learn programming with great determination for 4 years until the 8th grade. 
+                    I've created a lot of projects and I even entered a competition about scratch.
+                    During these times, I improved myself in many programming areas from the Web to DotNet.
+                </p>
+                <span class="timeline-date">September 2019</span>
+            </div>
+            <div style="left: 55%;" class="timeline-box top">
+                <div class="timeline-box-dot"></div>
+                <header>Highschool</header>
+                <p>
+                    As you can see, I took a break from school for a year after 8th grade. 
+                    In this break, I learned Java and published a Minecraft plugin called VirtualShop. 
+                    In these times, my most popular project VirtualShop was downloaded by thousands of people.
+                    Anyway, I started to study programming in a technical high school in September 2021.
+                </p>
+                <span class="timeline-date">September 2021</span>
+            </div>
+            <div style="left: 105%;" class="timeline-box top">
+                <div class="timeline-box-dot"></div>
+                <header>Nowadays</header>
+                <p>I'm still in high school. These days, I am preparing for the university exam more. I don't have much time to produce projects.</p>
+                <span class="timeline-date">2022</span>
+            </div>
+            
+        </div>
+        <button id="timeline-button-previous" class="timeline-button previous pi-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="timeline-button-next" class="timeline-button next pi-button"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+
+    <div class="my-row" alt="Abilities" id="abilities">
+        <div id="ability-slide-wrapper">
+            <div id="ability-list">
+                <div class="category" color="pink">
+                    <span class="title">Design</span>
+                    <button ability="html" class="element">HTML5 & CSS3</button>
+                    <button ability="illustrator" class="element">Illustrator</button>
+                    <button ability="photoshop" class="element">Photoshop</button>
+                </div>
+                <div class="category" color="aqua">
+                    <span class="title">Programming</span>
+                    <button ability="javascript" class="element">Javascript</button>
+                    <button ability="python" class="element">Python</button>
+                    <button ability="java" class="element">Java</button>
+                    <button ability="lua" class="element">Lua</button>
+                    <button ability="php" class="element">PHP</button>
+                    <button ability="cpp" class="element">C++</button>
+                    <button ability="csharp" class="element">C#</button>
+                </div>
+                <!--<div class="category" color="green">
+                    <span class="title">Frameworks</span>
+                </div>-->
+                <div class="category" color="yellow">
+                    <span class="title">Other</span>
+                    <button ability="unity" class="element">Unity</button>
+                </div>
+            </div>
+
+            <div id="ability-contents">
+                
+                <div class="ability-content" ability="ee" progress='100'>
+                    <span class="title">Thanks for visiting.</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/ee.png')"></span>
+                        Congratulations, you found a hidden section in the site! 
+                        Thanks you a lot for visiting my website and have a great day.
+                    </span>
+                </div>
+                <div class="ability-content" ability="html" progress='90' active>
+                    <span class="title">HTML 5 & CSS3</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/html.png')"></span>
+                        My adventure with HTML and CSS started in 2018. 
+                        Until 2019, I frequently worked on html and css for educational purposes. 
+                        After 2019 I only used it for personal and freelance works.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div removeOpacity class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/html1.png)">
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="illustrator" progress='25'>
+                    <span class="title">Illustrator</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/ai.png')"></span>
+                        I can't say I know Illustrator so well. 
+                        I can say I know it enough to take care of my own needs.
+                        I've used it before to create basic level illustrations like game sprites, web site decorations etc.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/ai1.png)">
+                            <span class="title">
+                                Me lookin' at mountains
+                            </span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/ai2.png)">
+                            <span class="title">
+                                Eye of Cthulhu
+                            </span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="photoshop" progress='65'>
+                    <span class="title">Photoshop</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/ps.png')"></span>
+                        I've been using photoshop for as long as I can remember. 
+                        I can't remember when I first used Photoshop.
+                        Photoshop would my primary interest if I wasn't interested in programming.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/ps1.png)">
+                            <span class="title">
+                                Some of my photoshops
+                            </span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/ps2.png)">
+                            <span class="title">
+                                Wavy Flag
+                            </span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/ps3.jpg)">
+                            <span class="title">
+                                Wallpaper
+                            </span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="javascript" progress='40'>
+                    <span class="title">Javascript</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/javascript.png')"></span>
+                        I have been using Javascript frequently since 2018.
+                        I tried to use some of popular Javascript libraries like Electron, React.js but I cannot say that I am an expert.
+                        I don't think I have learned enough about the module structure and object-oriented programming of Javascript.
+                        I consider myself intermediate in Javascript.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div removeOpacity class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/null.png)">
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="python" progress='75'>
+                    <span class="title">Python</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/python.png')"></span>
+                        My introduction to Python is very new, but I still think I know it much better than other languages.
+                        As a programming language python isn't so cool.
+                        But I love this language because it has amazing libraries.
+                        And its a great tool especially for someone like me who always like to take care of his own things by himself.
+                        I consider myself intermediate in Python.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/py2.png)">
+                            <span class="title">Online Support Server</span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                        <iframe class="slide" src="https://www.youtube.com/embed/9jrHFaNmUME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+                        </iframe>
+                    </div>
+                </div>
+                <div class="ability-content" ability="java" progress='68'>
+                    <span class="title">Java</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/java.png')"></span>
+                        There are a lot of people who don't like Java. I am not one of them.
+                        Java is one of my favorite languages thanks to its oop (Object Oriented Programming).
+                        I consider myself intermediate in Java.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/java1.png)">
+                            <span class="title">VirtualShop</span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/java2.jpg)">
+                            <span class="title">Speaker Train</span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="lua" progress='95'>
+                    <span class="title">Lua</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/lua.png')"></span>
+                        I would say that I have really great experience with lua.
+                        I have been modding lua for a very long time in games like Roblox, Garry's Mod.
+                        I know that more than half of the time I officially spend in these games is spent on coding.
+                        And that's more than 1000 hours in total.
+                        I consider myself expert in Lua.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/lua1.png)">
+                            <span class="title">NPC Extension</span>
+                            <button class="slider-button main pi-button">See More<button>
+                        </div>
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/lua2.png)">
+                            <span class="title">Holographic Chat</span>
+                            <button class="slider-button main pi-button">See More<button>
+                        </div>
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/lua3.png)">
+                            <span class="title">Embrace Addon</span>
+                            <button class="slider-button main pi-button">See More<button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="php" progress='70'>
+                    <span class="title">PHP</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/php.png')"></span>
+                        PHP is a cool language in my opinion. 
+                        Especially between 2018-2019, I used php a lot.
+                        I have used PHP not only for websites. I also used it for internet bots.
+                        I consider myself expert in PHP.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div removeOpacity class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/null.png)">
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="cpp" progress='30'>
+                    <span class="title">C++</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/cpp.png')"></span>
+                        C++ may be one of the languages ​​I've struggled the most to learn.
+                        But I still have a long way to go for C++.
+                        I consider myself beginner in C++.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div removeOpacity class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/null.png)">
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="csharp" progress='60'>
+                    <span class="title">C#</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/csharp.png')"></span>
+                        C# is a kind of language that required years of experience to say you're an expert.
+                        Therefore, no matter how many projects I have done with C#, I still consider myself intermediate.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/cs1.png)">
+                            <span class="title">C# Applications</span>
+                            <button class="slider-button main pi-button">See in Github</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ability-content" ability="unity" progress='36'>
+                    <span class="title">Unity</span>
+                    <span class="content">
+                        <span class="image" style="background-image: url('https://bypikod.github.io/assets/images/abilities/unity.png')"></span>
+                        I tried to use and learn Unity many times just like C++.
+                        I know the basic logic and how components work.
+                        But I still don't consider myself experienced enough to be the producers of games like "The Forest".
+                        I consider myself intermediate in Unity.
+                    </span>
+                    <div class="slide-wrapper">
+                        <div class="slide" style="background-image:url(https://bypikod.github.io/assets/images/works/unity1.png)">
+                            <span class="title">UI Design</span>
+                            <button class="slider-button main pi-button">See More</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="ability-widgets">
+                
+                    <div class="ability-widget rate">
+                        <span class="title">My level</span>
+                        <div id="ability-progress-bar"></div>
+                    </div>
+                    
+                    <div class="ability-widget slider">
+                        <span class="title">Works</span>
+                        <div class="pi-slider" id="ability-slider" turnBackAfterLastSlide="true">
+                            <div id="current-ability-slider" class="slide-wrapper">
+                            </div>
+                            <button class="slider-button previous pi-button"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="slider-button next pi-button"><i class="fa-solid fa-angle-right"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+    <container id="footer-wrapper">
+        <span id="footer-brand" class="footer-text">✨ Made by Picode ✨</span>
+        <span class="footer-text">Thanks for visiting and have a great day!</span>
+    </container>
+</div>
 </body>
 </html>
