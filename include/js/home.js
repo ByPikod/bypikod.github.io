@@ -1,10 +1,9 @@
 class AbilityManager{
     
     constructor(){
-    
+        
         this.abilityButtons = document.querySelectorAll("button[ability]");
-        this.currentAbility = document.querySelector(".ability-content[active]");
-        this.currentAbility.style.display = "flex";
+        this.abilitySlider = document.querySelector("#current-ability-slider");
         
         this.abilityButtons.forEach(btn => {
             
@@ -17,7 +16,7 @@ class AbilityManager{
         });
         
         this.progressBar = new ProgressBar.SemiCircle('#ability-progress-bar', {
-            color: 'var(--extra-color)',
+            color: 'var(--button-primary)',
             trailColor: 'var(--secondary-color)',
             trailWidth: 12,
             strokeWidth: 12,
@@ -39,7 +38,8 @@ class AbilityManager{
             }
         });
         
-        this.setProgressBar(Number(this.currentAbility.getAttribute("progress")));
+        //this.currentAbility = document.querySelector(".ability-content[active]");
+        this.swapPage(document.querySelector(".ability-content[active]"));
     
     }
     
@@ -63,8 +63,20 @@ class AbilityManager{
         this.currentAbility = abilityContent;
         
         this.setProgressBar(Number(this.currentAbility.getAttribute("progress")));
-        this.oldAbility.style.animation = 'rotate-out backwards 0.2s';
-        this.oldAbility.addEventListener("animationend", this.animationEnd.bind(this));
+        if(this.oldAbility){
+            this.oldAbility.style.animation = 'rotate-out backwards 0.2s';
+            this.oldAbility.addEventListener("animationend", this.animationEnd.bind(this));
+        }else{
+            this.currentAbility.style.display = "flex";
+        }
+
+        let newImageWrapper = this.currentAbility.querySelector(".slide-wrapper");
+        if(newImageWrapper)
+            this.abilitySlider.innerHTML = newImageWrapper.innerHTML;
+        else
+            this.abilitySlider.innerHTML = "";
+        
+        this.abilitySlider.parentNode.setCurrent(0);
     
     }
     
@@ -125,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         timelineViewport.scroll({
             top: 0,
-            left: 0,
+            left: timelineViewport.scrollLeft - timelineViewport.clientWidth,
             behavior: 'smooth'
         });
 
