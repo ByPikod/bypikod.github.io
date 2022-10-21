@@ -78,6 +78,19 @@ a { color: inherit; text-decoration: none }
 .pi-slider .slider-button.main:hover { background: white; color: black; border-color: white; }
 .pi-slider > .slider-button.previous { border-radius: 100%; border: none; left: 5%; position: absolute; }
 .pi-slider > .slider-button.next { border-radius: 100%; border: none; right: 5%; }
+.loader{ position: absolute; top: 0%; bottom: 0%; right: 0%; left: 0%; background: black; z-index: 1000; }
+.loader > img { position: relative; top: 50%; left: 50%; transform: translate(-50%, -80%); width: 20vh; height: 20vh; animation: loading 2s infinite; }
+.loader-disapear { animation: loader-disapear 1s forwards; }
+@keyframes loader-disapear{
+    0%{ top: -0%; bottom: 0%; }
+    100%{ top: -100%; bottom: 100%; }
+}
+@keyframes loading{
+    0%{ transform: scale(1) translate(-50%, -80%) rotate(0deg); }
+    20%{ transform: scale(1.1) translate(-45%, -72%) rotate(5deg); }
+    50%{ transform: scale(1) translate(-50%, -80%) rotate(0deg); }
+    70%{ transform: scale(1.1) translate(-45%, -72%) rotate(-5deg); }
+}
 /* Intro */
 #home { --secondary-color: white; --primary-color: black; }
 #home { color: var(--secondary-color); text-align: center; background-attachment: fixed; background-repeat: no-repeat; background-size: cover; width: 100%; height: 100vh }

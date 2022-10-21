@@ -91,7 +91,7 @@ class AbilityManager{
 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("LoaderFinished", () => {
 
     const abilityManager = new AbilityManager();
     

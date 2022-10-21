@@ -107,6 +107,6 @@ class ScrollNavigator{
 }
 
 scrollNavigator = new ScrollNavigator();
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("LoaderFinished", () => {
     scrollNavigator.initialize();
 });

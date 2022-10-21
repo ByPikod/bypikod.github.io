@@ -34,5 +34,5 @@ pi = {
 
 }
 
-document.addEventListener("DOMContentLoaded", pi.initialize)
+document.addEventListener("LoaderFinished", pi.initialize)
 window.onload = pi.winInitialize;

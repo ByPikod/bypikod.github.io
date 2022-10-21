@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("LoaderFinished", () => {
     
     window.addEventListener("resize", () => {
         
